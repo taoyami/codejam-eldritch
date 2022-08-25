@@ -1,20 +1,18 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   margin: 0;
+  font-family: 'Rubik Dirt', cursive;
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
+
 }
 .ancients-container {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  gap: 10px;
-  min-width: 40%;
-  padding: 20px;
+column-gap: 50px;
+  margin-top: 200px;
+  width: 700px;
 }
 .ancients-container .ancient-card {
   background-position: 50%;
@@ -22,29 +20,36 @@ code {
   background-size: contain;
   box-sizing: border-box;
   cursor: pointer;
-  height: 260px;
-  width: 200px;
+  width: 253px;
+
 }
 .ancients-container .ancient-card.active {
-  border: 2px solid red;
+  border-color: #FB1919;
 }
+
 .difficulty-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  height: 100vh;
   justify-content: center;
+  margin-top: -70px;
+  margin-left: -617px;
 }
 .difficulty-container .difficulty {
-  border: 2px solid purple;
+  background: #000000;
+border: 4px solid #FB1919;
   box-sizing: border-box;
-  color: purple;
+color: white;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 70px;
   cursor: pointer;
-  padding: 5px;
   text-align: center;
+  width: 275px;
+height: 70px;
 }
 .difficulty-container .difficulty.active {
-  background-color: red;
+  background-color: #FB1919;
 }
 .deck-container {
   align-items: center;
@@ -52,15 +57,26 @@ code {
   flex-direction: column;
   gap: 20px;
   justify-content: center;
-  min-width: 30%;
+  margin-top: 154px;
+  margin-left: -300px;
 }
 .deck-container .shuffle-button {
-  background-color: red;
-  border: 2px solid purple;
-  color: purple;
+  width: 275px;
+height: 70px;
+background: #FB1919;
+border: 5px solid #000000;
   cursor: pointer;
-  padding: 5px;
+  margin-top: -100px;
 }
+
+.shuffle-text{
+  color: black;
+  text-align: center;
+  line-height: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
 .deck-container .current-state {
   display: flex;
   flex-direction: column;
@@ -68,16 +84,18 @@ code {
   min-height: 30%;
 }
 .deck-container .current-state .stage-container {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  margin-top: 0px;
 }
 .deck-container .current-state .stage-container .stage-text {
-  color: purple;
+  font-size: 20px;
+  color: white;
 }
 .deck-container .current-state .stage-container .stage-text.done {
-  color: red;
+  color:#FB1919;;
 }
 .deck-container .current-state .stage-container .dots-container {
   align-items: center;
@@ -87,20 +105,26 @@ code {
 }
 .deck-container .current-state .stage-container .dot {
   align-items: center;
-  border-radius: 50%;
   display: flex;
-  height: 30px;
+  width: 72px;
+  height: 20px;
+  border: 3px solid #000000;
   justify-content: center;
-  width: 30px;
+ 
+}
+
+.stage-card {
+  display: flex;
+  justify-content: center;
 }
 .deck-container .current-state .stage-container .dot.green {
-  background-color: green;
+  background-color: #31BF51;
 }
 .deck-container .current-state .stage-container .dot.brown {
-  background-color: brown;
+  background-color: #FB1919;;
 }
 .deck-container .current-state .stage-container .dot.blue {
-  background-color: blue;
+  background-color: #88A9FF;
 }
 .deck-container .deck {
   cursor: pointer;
@@ -110,14 +134,17 @@ code {
   background-size: cover;
   height: 190px;
   width: 130px;
+  border: 4px solid #000000;
+  margin-left: 20px;
 }
+
 .App {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  gap: 20px;
+  gap: 550px;
   height: 100vh;
-  justify-content: space-between;
+  justify-content: center;
   width: 100vw;
 }
