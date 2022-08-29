@@ -1,13 +1,18 @@
-import cardsBlue from '../assets/MythicCards/blue/index.js'
-import cardsBrown from '../assets/MythicCards/brown/index.js'
-import cardsGreen from '../assets/MythicCards/green/index.js'
+// import blueCards from '../assets/MythicCards/blue/index.js'
+// console.log(blueCards);
+// import brownCards from '../assets/MythicCards/brown/index.js'
+// import greenCards from '../assets/MythicCards/green/index.js'
 
-import ancientsData from '../data/ancients.js'
+// import ancientsData from '../data/ancients.js'
 
-// console.log(cardsBlue);
-// console.log(cardsBrown);
-// console.log(cardsGreen);
+import ancientsData from '../data/ancients.js';
+import difficulties from '../data/difficulties.js';
+import greencardsData from '../data/mythicCards/green/index.js';
+import browncardsData from '../data/mythicCards/brown/index.js';
+import bluecardsData from '../data/mythicCards/blue/index.js';
 
+//console.log(greencardsData);
+// console.log(greenCards);
 // console.log(Ancients );
 
 
@@ -44,19 +49,19 @@ const greenPlayCards = [];
 const brownPlayCards = [];
 const bluePlayCards = [];
 
-const sumGreenCards = +ancientsData[0].firstStage.cardsGreen + +ancientsData[0].secondStage.cardsGreen + +ancientsData[0].thirdStage.cardsGreen
-const sumBrownCards = +ancientsData[1].firstStage.cardsBrown + +ancientsData[1].secondStage.cardsBrown + +ancientsData[1].thirdStage.cardsBrown
-const sumBlueCards = +ancientsData[1].firstStage.cardsBlue + +ancientsData[1].secondStage.cardsBlue + +ancientsData[1].thirdStage.cardsBlue
+const sumGreenCards = +ancientsData[0].firstStage.greenCards + +ancientsData[0].secondStage.greenCards + +ancientsData[0].thirdStage.greenCards
+const sumBrownCards = +ancientsData[1].firstStage.brownCards + +ancientsData[1].secondStage.brownCards + +ancientsData[1].thirdStage.brownCards
+const sumBlueCards = +ancientsData[1].firstStage.blueCards + +ancientsData[1].secondStage.blueCards + +ancientsData[1].thirdStage.blueCards
 
-repeat(greenPlayCards, cardsGreen, sumGreenCards);
-repeat(brownPlayCards, cardsBrown, sumBrownCards);
-repeat(bluePlayCards, cardsBlue, sumBlueCards);
+repeat(greenPlayCards, greencardsData, sumGreenCards);
+repeat(brownPlayCards, browncardsData, sumBrownCards);
+repeat(bluePlayCards, bluecardsData, sumBlueCards);
 
 
 //
-const sumFirstStageGreenCards = ancientsData[0].firstStage.cardsGreen;
-const sumFirstStageBrownCards = ancientsData[0].firstStage.cardsBrown;
-const sumFirstStageBlueCards = ancientsData[0].firstStage.cardsBlue;
+const sumFirstStageGreenCards = ancientsData[0].firstStage.greenCards;
+const sumFirstStageBrownCards = ancientsData[0].firstStage.brownCards;
+const sumFirstStageBlueCards = ancientsData[0].firstStage.blueCards;
 
 const firstStageGreen = [];
 const firstStageBrown = [];
@@ -69,9 +74,9 @@ repeat1(firstStageBlue, bluePlayCards, sumFirstStageBlueCards);
 
 
 //
-const sumSecondStageGreenCards = ancientsData[0].secondStage.cardsGreen;
-const sumSecondStageBrownCards = ancientsData[0].secondStage.cardsBrown;
-const sumSecondStageBlueCards = ancientsData[0].secondStage.cardsBlue;
+const sumSecondStageGreenCards = ancientsData[0].secondStage.greenCards;
+const sumSecondStageBrownCards = ancientsData[0].secondStage.brownCards;
+const sumSecondStageBlueCards = ancientsData[0].secondStage.blueCards;
 
 const secondStageGreen = []
 const secondStageBrown = []
@@ -85,9 +90,9 @@ repeat1(secondStageBlue, bluePlayCards, sumSecondStageBlueCards);
 
 
 //
-const sumThirdStageGreenCards = ancientsData[0].thirdStage.cardsGreen;
-const sumThirdStageBrownCards = ancientsData[0].thirdStage.cardsBrown;
-const sumThirdStageBlueCards = ancientsData[0].thirdStage.cardsBlue;
+const sumThirdStageGreenCards = ancientsData[0].thirdStage.greenCards;
+const sumThirdStageBrownCards = ancientsData[0].thirdStage.brownCards;
+const sumThirdStageBlueCards = ancientsData[0].thirdStage.blueCards;
 
 const thirdStageGreen = []
 const thirdStageBrown = []
@@ -115,7 +120,7 @@ const thirdStageCards = thirdStageGreen.concat(thirdStageBrown, thirdStageBlue)
   
 
 
-currentCardPlay.src = " ";
+currentCardPlay.src = "";
 
 counter();
 };
@@ -125,11 +130,35 @@ counter();
 const deck = document.querySelector('.deck');
 const currentCardPlay  = document.querySelector('.last-card');
 
-// здесь должна быть функция показа карт showCard()
 
-// deck.addEventListener('click', () =>{
-// 	showCard()
-// })
+function showCard(){
+   if ( playCards[0].length != 0){
+      currentCardPlay.src = playCards[0][0].cardFace;
+   console.log(playCards[0])
+   playCards[0].splice(0, 1);
+   counter();
+   //console.log(playCards[0])
+   } else if (playCards[1].length != 0){
+      currentCardPlay.src = playCards[1][0].cardFace;
+     // console.log(playCards[1])
+      playCards[1].splice(0, 1);
+      counter();
+     // console.log(playCards[1])
+   } else if (playCards[2].length != 0){
+      currentCardPlay.src = playCards[2][0].cardFace;
+      //console.log(playCards[2])
+      playCards[2].splice(0, 1);
+      counter();
+      //console.log(playCards[2])
+   } else deck.classList.remove('deck-active');
+     
+   
+
+
+};
+
+deck.addEventListener('click', showCard );
+
 
 //
 const ancientsCard = document.querySelector('.ancient-card');
