@@ -4,52 +4,82 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <title>Codejam Demo</title>
-    <link href="/style.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap"
+      rel="stylesheet"
+    />
+    <title>Codejam Eldritch Horror</title>
+    <link href="/style.css" rel="stylesheet" />
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
-      <div
-        class="App"
-        style="
-          background-image: url('./assets/home.png');
-        "
-      >
+      <div class="App" style="background-image: url('./assets/home1.jpg')">
         <div class="ancients-container">
           <div
             class="ancient-card"
-            style="
-              background-image: url('./assets/Ancients/Azathoth.png');"></div>
-          <div
+            style="background-image: url('./assets/Ancients/Azathoth.jpg')"
+          ></div>
+          <!-- <div
             class="ancient-card"
-            style="
-              background-image: url('./assets/Ancients/Cthulthu.png');
-            "
+            style="background-image: url('./assets/Ancients/Cthulthu.jpg')"
           ></div>
           <div
             class="ancient-card"
-            style="
-              background-image: url('./assets/Ancients/IogSothoth.png');
-            "
+            style="background-image: url('./assets/Ancients/IogSothoth.jpg')"
           ></div>
           <div
-            class="ancient-card active"
-            style="
-              background-image: url('./assets/Ancients/ShubNiggurath.png');
-            "
-          ></div>
+            class="ancient-card"
+            style="background-image: url('./assets/Ancients/ShubNiggurath.jpg')"
+          ></div> -->
         </div>
         <div class="difficulty-container">
-          <div class="difficulty active">Низкая</div>
-          <div class="difficulty">Средняя</div>
-          <div class="difficulty">Высокая</div>
+          <div class="difficulty-list">
+                      <!-- <div class="difficulty">super light</div>
+          <div class="difficulty">light</div> -->
+          <div class="difficulty">normal</div>
+          <!-- <div class="difficulty">hard</div>
+          <div class="difficulty">super hard</div> -->
+          </div>
         </div>
         <div class="deck-container">
-          <span class="shuffle-button">Замешать колоду</span>
+          <div class="shuffle-button">
+            <p class="shuffle-text">shuffle deck</p>
+          </div>
+          <div class="current-state">
+            <div class="stage-container">
+              <span class="stage-text">first stage</span>
+              <div class="dots-container">
+                <div class="dot green">0</div>
+                <div class="dot brown">0</div>
+                <div class="dot blue">0</div>
+              </div>
+            </div>
+            <div class="stage-container">
+              <span class="stage-text">second stage</span>
+              <div class="dots-container">
+                <div class="dot green">0</div>
+                <div class="dot brown">0</div>
+                <div class="dot blue">0</div>
+              </div>
+            </div>
+            <div class="stage-container">
+              <span class="stage-text">third stage</span>
+              <div class="dots-container">
+                <div class="dot green">0</div>
+                <div class="dot brown">0</div>
+                <div class="dot blue">0</div>
+              </div>
+            </div>
+          </div>
+          <div class="stage-card">
+            <img src="./assets/mythicCardBackground.png" class="deck" alt="deck"></img>
+            <div class="last-card" src=" "></div>
+          </div>
         </div>
       </div>
     </div>
-   <!--<script type="module" src="/script.js"></script>-->
+    <script type="module" src="/script.js"></script>
   </body>
 </html>

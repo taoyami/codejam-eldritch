@@ -1,13 +1,89 @@
-import azathoth from './Azathoth.png';
-import cthulhu from './Cthulthu.png';
-import iogSothoth from './IogSothoth.png';
-import shubNiggurath from './ShubNiggurath.png';
+//import azathoth from './Azathoth.jpg';
+//import cthulhu from './Cthulthu.jpg';
+//import iogSothoth from './IogSothoth.jpg';
+//import shubNiggurath from './ShubNiggurath.jpg';
 
-const ancients = {
-  azathoth,
-  cthulhu,
-  iogSothoth,
-  shubNiggurath
-}
+const ancients = [
+  {
+    id: 'azathoth',
+    name: 'azathoth',
+    //cardFace: Ancients.azathoth,
+    firstStage: {
+      greenCards: 1,
+      blueCards: 1,
+      brownCards: 2,
+    },
+    secondStage: {
+      greenCards: 2,
+      blueCards: 1,
+      brownCards: 3,
+    },
+    thirdStage: {
+      greenCards: 2,
+      blueCards: 0,
+      brownCards: 4,
+    },
+  },
+  {
+    id: 'cthulhu',
+    name: 'cthulhu',
+    //cardFace: Ancients.cthulhu,
+    firstStage: {
+      greenCards: 0,
+      blueCards: 2,
+      brownCards: 2,
+    },
+    secondStage: {
+      greenCards: 1,
+      blueCards: 0,
+      brownCards: 3,
+    },
+    thirdStage: {
+      greenCards: 3,
+      blueCards: 0,
+      brownCards: 4,
+    },
+  },
+  {
+    id: 'iogSothoth',
+    name: 'iogSothoth',
+    //cardFace: Ancients.iogSothoth,
+    firstStage: {
+      greenCards: 0,
+      blueCards: 1,
+      brownCards: 2,
+    },
+    secondStage: {
+      greenCards: 2,
+      blueCards: 1,
+      brownCards: 3,
+    },
+    thirdStage: {
+      greenCards: 3,
+      blueCards: 0,
+      brownCards: 4,
+    },
+  },
+  {
+    id: 'shubNiggurath',
+    name: 'shubNiggurath',
+    //cardFace: Ancients.shubNiggurath,
+    firstStage: {
+      greenCards: 1,
+      blueCards: 1,
+      brownCards: 2,
+    },
+    secondStage: {
+      greenCards: 3,
+      blueCards: 1,
+      brownCards: 2,
+    },
+    thirdStage: {
+      greenCards: 2,
+      blueCards: 0,
+      brownCards: 4,
+    },
+  },
+]
 
 export default ancients
